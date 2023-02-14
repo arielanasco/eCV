@@ -1,0 +1,532 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h4>Profile</h4>
+    </div>
+    <form id="taskitem_form" method="post" class="card-body">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Primary Information</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <img src="static\img\test.png" class="rounded mx-auto d-block" alt="...">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="formFile" class="form-label">Profile Photo</label>
+                        <input class="form-control" type="file" id="formFile" name="formFile">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="prefix" class="form-label">Prefix</label>
+                        <select id="prefix" name="prefix" class="form-select">
+                            <option selected></option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Mrs.">Mrs.</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="fname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="mname" class="form-label">Middle Name</label>
+                        <input type="text" class="form-control" id="mname" name="mname">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="lname" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lname">
+                    </div>
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="col-12">
+                        <label for="mobilenumber" class="form-label">Mobile Number</label>
+                        <input type="number" max-length="11" class="form-control" id="mobilenumber" name="mobilenumber">
+                    </div>
+                    <div class="col-12">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" max-length="11" class="form-control" id="dob" name="dob">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Education</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <h4>Primary Education</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="school1" class="form-label">School</label>
+                        <input type="text" class="form-control" id="school1" name="school1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="yearGraduated1" class="form-label">Year Graduated</label>
+                        <input type="date" class="form-control" id="yearGraduated1" name="yearGraduated1">
+                    </div>
+                    <hr class="my-5" />
+                    <div class="col-md-12">
+                        <h4>Secondary Education</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="school2" class="form-label">School</label>
+                        <input type="text" class="form-control" id="school2" name="school2">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="track" class="form-label">Track/Strand</label>
+                        <input type="text" class="form-control" id="track2" name="track2">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="yearGraduated2" class="form-label">Year Graduated</label>
+                        <input type="date" class="form-control" id="yearGraduated2" name="yearGraduated2">
+                    </div>
+                    <hr class="my-5" />
+                    <div class="col-md-12">
+                        <h4>Higher Education</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="school3" class="form-label">School</label>
+                        <input type="text" class="form-control" id="school3" name="school3">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="course3" class="form-label">Course</label>
+                        <input type="text" class="form-control" id="course3" name="course3">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="yearGraduated3" class="form-label">Year Graduated</label>
+                        <input type="date" class="form-control" id="yearGraduated3" name="yearGraduated3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Address</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <label for="address1" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address1" name="address1"
+                            aria-describedby="address1Help">
+                        <div id="address1Help" class="form-text">Street address, P.O box, etc</div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <label for="address2" class="form-label">Address 2</label>
+                        <input type="text" class="form-control" id="address2" name="address2"
+                            aria-describedby="address2Help">
+                        <div id="address2Help" class="form-text">Apartment, suite, studio, floor, etc.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="province" class="form-label">Province</label>
+                        <input type="text" class="form-control" id="province" name="province">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="zipcode" class="form-label">Zip Code</label>
+                        <input type="text" class="form-control" id="zipcode" name="zipcode">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Career Objective</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <label for="careeerObjective" class="form-label">Career Objective</label>
+                        <textarea class="form-control" id="careeerObjective" name="careeerObjective"
+                            rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Technical Skills</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3 mb-5" id="listTechSkills">
+                </div>
+                <div class="row g-3">
+                    <div id="alert-techskills" class="col-md-12">
+                    </div>
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" aria-describedby="addbutton-technicalSkill"
+                            id="addinput-technicalSkill">
+                        <button class="btn btn-primary" type="button" id="addbutton-technicalSkill">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Presonal Skills</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3 mb-5" id="listPersonalSkills">
+                </div>
+                <div id="alert-personalskills" class="col-md-12">
+                </div>
+                <div class="row g-3">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" aria-describedby="addbutton-personalSkill"
+                            id="addinput-personalSkill">
+                        <button class="btn btn-primary" type="button" id="addbutton-personalSkill">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Professional/Work Experience</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3 mb-5" id="listEmployments">
+                    <!-- <div class="col-md-12">
+                        <label for="companyName" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" value="lorem company" disabled
+                            readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="jobPosition" class="form-label">Job/Position</label>
+                        <input type="text" class="form-control" id="jobPosition" aria-describedby="jobPositionHelp"
+                            value="lorem position" disabled readonly>
+                        <div id="jobPositionHelp" class="form-text">e.g. Software Developer</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="startDate" class="form-label">From</label>
+                        <input type="date" class="form-control" id="startDate" aria-describedby="startDateHelp"
+                            value="2015-01-02" disabled readonly>
+                        <div id="startDateHelp" class="form-text">Start of employment</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="endDate" class="form-label">To</label>
+                        <input type="date" class="form-control" id="endDate" aria-describedby="endDateHelp" disabled
+                            readonly>
+                        <div id="endDateHelp" class="form-text">End of employment. Leave blank if still working
+                            here.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="roleExplanation" class="form-label">Explain your
+                            role/responsibilites</label>
+                        <textarea class="form-control" id="roleExplanation" rows="5" disabled
+                            readonly>Test data lorem</textarea>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-danger btn-sm" type="button">Remove</button>
+                    </div> -->
+                </div>
+                <div class="row g-3">
+                    <div id="alert-employment" class="col-md-12">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="companyName" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" name="companyName">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="jobPosition" class="form-label">Job/Position</label>
+                        <input type="text" class="form-control" id="jobPosition" name="jobPosition"
+                            aria-describedby="jobPositionHelp">
+                        <div id="jobPositionHelp" class="form-text">e.g. Software Developer</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="startDate" class="form-label">From</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate"
+                            aria-describedby="startDateHelp">
+                        <div id="startDateHelp" class="form-text">Start of employment</div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="endDate" class="form-label">To</label>
+                        <input type="date" class="form-control" id="endDate" name="endDate"
+                            aria-describedby="endDateHelp">
+                        <div id="endDateHelp" class="form-text">End of employment. Leave blank if still working
+                            here.</div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="roleExplanation" class="form-label">Explain your
+                            role/responsibilites</label>
+                        <textarea class="form-control" id="roleExplanation" name="roleExplanation" rows="3"></textarea>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-sm" id="addbutton-employment">Add</button>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            $("#addbutton-employment").click(function () {
+                                var numberCompany = $(".companyName ").length + 1
+
+                                var company = ($("#companyName").val())
+                                var jobPosition = ($("#jobPosition").val())
+                                var startDate = ($("#startDate").val())
+                                var endDate = ($("#endDate").val())
+                                var roleExplanation = ($("#roleExplanation").val())
+                                //Company field
+                                console.log(numberCompany)
+                                if (company.trim().length !== 0) {
+                                    $("#listEmployments").append(`<div class="col-md-12">
+                                        <label for="companyName" class="form-label">Company Name</label>
+                                        <input type="text" class="form-control companyName" name="company_`+ numberCompany + `" value="` + company + `" readonly>
+                                        </div>`)
+                                    $("#companyName").val("")
+                                } else {
+                                    $("#alert-employment").append(`
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Company name is required!</strong> Make your statement precise and concise.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>`)
+                                }
+                                //jobPosition
+                                console.log(numberCompany)
+                                if (jobPosition.trim().length !== 0) {
+                                    $("#listEmployments").append(`<div class="col-md-6">
+                                        <label for="jobPosition_`+ numberCompany + `" class="form-label">Job/Position</label>
+                                        <input type="text" class="form-control" name="jobPosition_`+ numberCompany + `" value="` + jobPosition + `" readonly>
+                                        </div>`)
+                                    $("#jobPosition").val("")
+                                } else {
+                                    $("#alert-employment").append(`
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Job position is required!</strong> Make your statement precise and concise.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>`)
+                                }
+                                // startDate
+                                //console.log(startDate)
+                                if (startDate.trim().length !== 0) {
+                                    $("#listEmployments").append(`<div class="col-md-3">
+                                        <label for="startDate`+ numberCompany + `" class="form-label">From</label>
+                                        <input type="date" class="form-control" name="startDate`+ numberCompany + `" value="` + startDate + `" readonly>
+                                        </div>`)
+                                    $("#startDate").val("")
+                                } else {
+                                    $("#alert-employment").append(`
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Start Date is required!</strong> Make your statement precise and concise.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>`)
+                                }
+                                // console.log(endDate)
+                                if (endDate.trim().length !== 0) {
+                                    $("#listEmployments").append(`<div class="col-md-3">
+                                        <label for="endDate`+ numberCompany + `" class="form-label">To</label>
+                                        <input type="date" class="form-control" name="endDate`+ numberCompany + `" value="` + endDate + `" readonly>
+                                        </div>`)
+                                    $("#endDate").val("")
+                                } else {
+                                    $("#alert-employment").append(`
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>End Date is required!</strong> Make your statement precise and concise.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>`)
+                                }
+                                // console.log(roleExplanation)
+                                if (roleExplanation.trim().length !== 0) {
+                                    $("#listEmployments").append(`<div class="col-md-12">
+                                        <label for="roleExplanation`+ numberCompany + `" class="form-label">Explain your
+                                        role/responsibilites</label>
+                                        <textarea type="date" class="form-control" name="roleExplanation`+ numberCompany + `" rows="5" readonly>`+roleExplanation+`</textarea>
+                                        </div>`)
+                                    $("#roleExplanation").val("")
+                                    $("#listEmployments").append(`
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <button class="btn btn-danger btn-sm" type="button">Remove</button>
+                                    </div>
+                                    <hr class="my-5" />`)
+                                } else {
+                                    $("#alert-employment").append(`
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <strong>Role is required!</strong> Make your statement precise and concise.
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>`)
+                                }
+                            });
+
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <hr class="my-5" />
+        <div class="row my-5">
+            <div class="col-md-4">
+                <h5>Projects</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi, eum tempora in
+                    illo numquam!</p>
+            </div>
+            <div class="col-md-8">
+                <div class="row g-3 mb-5">
+                    <div class="col-md-12 ">
+                        <img src="static\img\sample.jpg" class="rounded mx-auto d-block" alt="..." width="100%"
+                            height="200">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="companyName" class="form-label">Project Title</label>
+                        <input type="text" class="form-control" id="companyName" value="lorem project" disabled
+                            readonly>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="projectUrl" class="form-label">Project URL</label>
+                        <input type="text" class="form-control" id="projectUrl" value="lorem urls" disabled readonly>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="projectExp" class="form-label">What's the project all about.</label>
+                        <textarea class="form-control" id="projectExp" rows="3" disabled
+                            readonly>Lorem ipsum dolor sit amet.</textarea>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-danger btn-sm" type="button">Remove</button>
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-12">
+                        <label for="projectTitle" class="form-label">Project Title</label>
+                        <input type="text" class="form-control" id="projectTitle" name="projectTitle">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="projectUrl" class="form-label">Project URL</label>
+                        <input type="text" class="form-control" id="projectUrl" name="projectUrl">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="projectExp" class="form-label">What's the project all about.</label>
+                        <textarea class="form-control" id="projectExp" name="projectExp" rows="3"></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="projectImage" class="form-label">Project Image</label>
+                        <input class="form-control" type="file" id="projectImage" name="projectImage">
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-sm" disabled>Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary btn-lg" type="submit" id="Save">Save</button>
+            <!-- <input type="submit" name="submit" value="Add Task" class ="btn btn-primary" /> -->
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        $("#addbutton-technicalSkill").click(function () {
+            var addinputTechnicalSkill = ($("#addinput-technicalSkill").val())
+            if (addinputTechnicalSkill.trim().length !== 0) {
+                var lengthInput = $("#listTechSkills input").length + 1
+                if (lengthInput === 5) {
+                    $("#addinput-technicalSkill").prop('disabled', true)
+                    $("#addbutton-technicalSkill").prop('disabled', true)
+                    $("#alert-techskills").append(`
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Maximum of 10 items only!</strong> Make your statement precise and concise.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>`)
+                }
+                $("#listTechSkills").append(`<div class="input-group col-md-12">
+                    <input type="text" class="form-control" aria-describedby="button-remove" value="`+ addinputTechnicalSkill + `" name="techskill_` + lengthInput + `" readonly>
+                    <button class="btn btn-danger" type="button" id="button-remove">X</button>
+                    </div>`)
+                $("#addinput-technicalSkill").val("")
+            } else {
+                $("#alert-techskills").append(`
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Empty input is not allowed!</strong> Make your statement precise and concise.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>`)
+            }
+
+        });
+        $(document).on('click', '#button-remove', function () {
+            $(this).parent().remove()
+            var lengthInput = $("#listTechSkills input").length
+            console.log(lengthInput)
+            if (lengthInput < 5) {
+                console.log("Test")
+                $("#addinput-technicalSkill").attr("disabled", false);
+                $("#addbutton-technicalSkill").attr("disabled", false);
+            }
+
+        });
+        //Another code
+        $("#addbutton-personalSkill").click(function () {
+            var addinputTechnicalSkill = ($("#addinput-personalSkill").val())
+
+            if (addinputTechnicalSkill.trim().length !== 0) {
+                var lengthInput = $("#listPersonalSkills input").length + 1
+                if (lengthInput === 5) {
+                    $("#addinput-personalSkill").attr("disabled", true);
+                    $("#addbutton-personalSkill").attr("disabled", true);
+                    $("#alert-personalskills").append(`
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Maximum of 10 items only!</strong> Make your statement precise and concise.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>`)
+                }
+                $("#listPersonalSkills").append(`<div class="input-group col-md-12">
+                    <input type="text" class="form-control" aria-describedby="button-remove" value="`+ addinputTechnicalSkill + `" name="personalskill_` + lengthInput + `" readonly>
+                    <button class="btn btn-danger" type="button" id="button-remove">X</button>
+                    </div>`)
+                $("#addinput-personalSkill").val("")
+            } else {
+                $("#alert-personalskills").append(`
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Empty input is not allowed!</strong> Make your statement precise and concise.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>`)
+            }
+
+        });
+        $(document).on('click', '#button-remove', function () {
+            $(this).parent().remove()
+            var lengthInput = $("#listPersonalSkills input").length
+            console.log(lengthInput)
+            if (lengthInput < 5) {
+                console.log("Test")
+                $("#addinput-personalSkill").attr("disabled", false);
+                $("#addbutton-personalSkill").attr("disabled", false);
+            }
+
+        });
+    });
+</script>
+{% endblock %}
